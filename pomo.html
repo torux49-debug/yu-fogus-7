@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรโมชั่นพิเศษ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .promo-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .promo-header {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .promo-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .promo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .promo-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .promo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .promo-button {
+            padding: 15px 30px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .promo-button:hover {
+            background-color: #e5533c;
+        }
+
+        .promo-footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .promo-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .promo-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .cart {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart li {
+            margin-bottom: 10px;
+        }
+
+        .cart-emoji {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-container">
+        <div class="promo-header">โปรโมชั่นสุดพิเศษ!</div>
+        <div class="promo-description">
+            รับส่วนลด 30% สำหรับสินค้าทุกชิ้นที่คุณชื่นชอบ! เลือกดูสินค้าของเราจากแกลลอรี่ด้านล่าง
+        </div>
+
+        <div class="promo-gallery">
+            <!-- รูปภาพพร้อมคลิกเพื่อเพิ่มสินค้าไปยังตะกร้า -->
+            <img src="https://i.pinimg.com/1200x/e2/79/a4/e279a4758ba528eb5e2475253db9bed4.jpg" alt="สินค้า 1" onclick="addToCart('สินค้า 1', '🍏')">
+            <img src="https://i.pinimg.com/1200x/c2/02/6a/c2026a772077ab8c6c29946b439e65f5.jpg" alt="สินค้า 2" onclick="addToCart('สินค้า 2', '🍎')">
+            <img src="https://i.pinimg.com/1200x/b1/b4/7f/b1b47f33ed75383583951f65afa9d151.jpg" alt="สินค้า 3" onclick="addToCart('สินค้า 3', '🍌')">
+            <img src="https://i.pinimg.com/1200x/04/4d/0e/044d0e6a809480665bd6e948b2eec42a.jpg" alt="สินค้า 4" onclick="addToCart('สินค้า 4', '🍒')">
+            <img src="https://i.pinimg.com/1200x/cc/f6/5c/ccf65c87a4dc0693cb8e2f1485a6cc4c.jpg" alt="สินค้า 5" onclick="addToCart('สินค้า 5', '🍊')">
+            <img src="https://i.pinimg.com/736x/e9/0e/72/e90e726c1a2fa3dccf3f781e1ffd6316.jpg" alt="สินค้า 6" onclick="addToCart('สินค้า 6', '🍍')">
+        </div>
+
+        <div class="cart">
+            <h3>สินค้าที่เพิ่มในตะกร้า</h3>
+            <ul id="cart-list">
+                <!-- รายการสินค้าที่เลือกจะไปที่นี่ -->
+            </ul>
+            <a href="cart.html" class="promo-button">ไปยังตะกร้า</a>
+        </div>
+
+        <div class="promo-footer">
+            ข้อกำหนดและเงื่อนไข: โปรโมชั่นนี้ใช้ได้จนถึงวันที่ 31 ธันวาคม 2025 <br>
+            <a href="#">ดูรายละเอียดเพิ่มเติม</a>
+        </div>
+    </div>
+
+    <script>
+        // ฟังก์ชันที่เพิ่มสินค้าลงในตะกร้า
+        let cart = [];
+
+        function addToCart(product, emoji) {
+            // เพิ่มสินค้าไปยังตะกร้า
+            cart.push({ product, emoji });
+
+            // อัพเดตการแสดงผลในตะกร้า
+            updateCart();
+        }
+
+        function updateCart() {
+            // ดึงรายการสินค้าจากตะกร้า
+            const cartList = document.getElementById('cart-list');
+            cartList.innerHTML = '';  // เคลียร์รายการเดิม
+
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${item.emoji} ${item.product}`;
+                cartList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ร้านขายเสื้อผ้าแฟชั่น</title>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .product h2 {
+      font-size: 18px;
+      margin: 15px 10px 5px;
+      color: #333;
+    }
+
+    .price {
+      font-size: 16px;
+      color: green;
+      margin: 0 10px 10px;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ร้านขายเสื้อผ้าแฟชั่นออนไลน์</h1>
+  </header>
+
+  <div class="product-container">
+    <!-- สินค้า 1 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/1200x/f3/37/e2/f337e2cb76c0ae067ebb1fbeb64c6ae6.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>เสื้อยืดแฟชั่น</h2>
+      <p class="price">ราคา 250 บาท</p>
+      <a href="order1.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+    <!-- สินค้า 2 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/736x/9b/67/c4/9b67c44811b0501524ec7b0973c94167.jpg" alt="เสื้อแขนยาว">
+      <h2>เสื้อแขนยาว</h2>
+      <p class="price">ราคา 350 บาท</p>
+      <a href="order2.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+   <!-- สินค้า 3 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/736x/1e/7a/3d/1e7a3d403ad1682ecaede5719f467405.jpg" alt="เสื้อผ้าแฟชั่นลายสีแดง">
+      <h2>เสื้อผ้าแฟชั่นลายสีแดง</h2>
+      <p class="price">ราคา 265 บาท</p>
+      <a href="order3.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+   <!-- สินค้า 4 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/736x/e3/b1/2f/e3b12f9e891249b35f922eaca2a0b253.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>เสื้อเชื้ดสีดำ</h2>
+      <p class="price">ราคา 256 บาท</p>
+      <a href="order4.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+<!-- สินค้า 5 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/1200x/86/b3/85/86b385bb367c64d1ad14099d9b2f2672.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>เสื้อเชื้ดสีขาว</h2>
+      <p class="price">ราคา 240 บาท</p>
+      <a href="order5.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+
+<!-- สินค้า 6 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/736x/72/06/54/720654fb23627e7e154b2565d0fe5167.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>กางเกงขาสั้นสีดำ</h2>
+      <p class="price">ราคา 99 บาท</p>
+      <a href="order6.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+<!-- สินค้า 7 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/1200x/3b/8d/8d/3b8d8dee0bb9fe8264037b911091b8a8.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>กางเกงขาสั้นสีฟ้า</h2>
+      <p class="price">ราคา 99 บาท</p>
+      <a href="order7.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+
+<!-- สินค้า 8 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/1200x/ef/6b/39/ef6b39041805a8c3e609bafaba0dce27.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>กางเกงยีดเทา</h2>
+      <p class="price">ราคา 150 บาท</p>
+      <a href="order8.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+
+<!-- สินค้า 9 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/1200x/cc/f6/5c/ccf65c87a4dc0693cb8e2f1485a6cc4c.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>กางเกงยีดเทาเข้ม</h2>
+      <p class="price">ราคา 150 บาท</p>
+      <a href="order9.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+<!-- สินค้า 10 -->
+    <div class="product">
+      <img src="https://i.pinimg.com/1200x/95/fb/54/95fb54f17f0e9e782bc4e218902ddfa5.jpg" alt="เสื้อยืดแฟชั่น">
+      <h2>กางเกงยีดสีดำ</h2>
+      <p class="price">ราคา 150 บาท</p>
+      <a href="order10.html" class="btn">สั่งซื้อ</a>
+    </div>
+
+
+
+
+  </div>
+
+</body>
+</html>

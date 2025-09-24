@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ชำระเงิน</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      background-color: #fff;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .summary {
+      font-size: 16px;
+    }
+
+    .summary p {
+      margin: 8px 0;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: #28a745;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    .note {
+      font-size: 12px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💳 ชำระเงิน</h1>
+
+  <!-- 🧍‍♀️ ข้อมูลผู้สั่งซื้อ -->
+  <div class="section">
+    <h2>ข้อมูลผู้สั่งซื้อ</h2>
+    <form action="order-success.html" method="post">
+      <label for="name">ชื่อ-นามสกุล *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="address">ที่อยู่จัดส่ง *</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="phone">เบอร์โทรศัพท์ *</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="payment">วิธีชำระเงิน *</label>
+      <select id="payment" name="payment" required>
+        <option value="">-- กรุณาเลือก --</option>
+        <option value="cod">เก็บเงินปลายทาง</option>
+        <option value="bank">โอนผ่านบัญชีธนาคาร</option>
+        <option value="promptpay">พร้อมเพย์</option>
+      </select>
+  </div>
+
+  <!-- 📦 สรุปสินค้า -->
+  <div class="section summary">
+    <h2>รายการสั่งซื้อ</h2>
+    <p><strong>สินค้า:</strong>เสื้อเชื้ดสีขาว</p>
+    <p><strong>จำนวน:</strong> 1 ชิ้น</p>
+    <p><strong>ราคาสินค้า:</strong> ฿240</p>
+    <p><strong>ค่าจัดส่ง:</strong> ฿50</p>
+    <hr>
+    <p><strong>รวมทั้งหมด:</strong> <span style="color: red;">฿290</span></p>
+  </div>
+
+  <!-- ✅ ปุ่มยืนยัน -->
+  <div class="section">
+    <button type="submit" class="btn">ยืนยันการสั่งซื้อ</button>
+    </form>
+    <p class="note">
+  </div>
+
+</body>
+</html>
